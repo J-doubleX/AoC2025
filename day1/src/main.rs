@@ -20,7 +20,7 @@ fn main() -> Result<()>{
 
     for line in &lines{
         let t: i32 = line[1..].parse().unwrap();
-        if line.chars().next() == Some('L') {
+        if line.starts_with('L') {
             let stz = if cur!=0 {cur} else {100};
             if t >= stz {
                 c += 1 + (t - stz) / 100;
@@ -41,7 +41,6 @@ fn main() -> Result<()>{
 
         }
     }
-
     println!("{}", c);
     Ok(())
 }
